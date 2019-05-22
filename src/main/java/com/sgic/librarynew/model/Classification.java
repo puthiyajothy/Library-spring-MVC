@@ -16,7 +16,7 @@ public class Classification {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column
+	@Column(name="classification_id")
 	private int classificationId;
 	
 	@Column(name="classification_name")
