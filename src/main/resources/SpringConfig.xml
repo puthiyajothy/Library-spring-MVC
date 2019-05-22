@@ -8,24 +8,17 @@
 
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-		<property name="driverClassName"
-			value="com.mysql.cj.jdbc.Driver"></property>
-		<property name="url"
-			value="jdbc:mysql://localhost:3306/librarynew"></property>
+		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>
+		<property name="url" value="jdbc:mysql://localhost:3306/librarynew"></property>
 		<property name="username" value="root"></property>
 		<property name="password" value="root"></property>
 	</bean>
 
-	<!-- <bean id="classificationService" class="com.sgic.librarynewservice.ClassificationServiceimpl"> 
-		<property name="classificationDAO" ref="classificationDAO"></property> </bean> -->
-
-	<!-- <bean id="classificationDAO" class="com.sgic.librarynew.dao.ClassificationDAOimpl"> 
-		<property name="hibernateTemplate" ref="hibernateTemplate"></property> </bean> -->
 
 	<bean id="hibernateTemplate"
 		class="org.springframework.orm.hibernate5.HibernateTemplate">
 		<property name="sessionFactory" ref="sessionFactory"></property>
-		<property name="CheckWriteOperations" value="false"></property>
+		<property name="checkWriteOperations" value="false"></property>
 	</bean>
 
 	<bean id="sessionFactory"

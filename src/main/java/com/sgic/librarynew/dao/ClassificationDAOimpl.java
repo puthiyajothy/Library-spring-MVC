@@ -1,5 +1,8 @@
 package com.sgic.librarynew.dao;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate5.HibernateTemplate;
 import org.springframework.stereotype.Repository;
@@ -25,5 +28,18 @@ public class ClassificationDAOimpl implements ClassificationDAO {
 		System.out.println(classification.getClassificationName());
 		return null;
 	}
+
+	@Override
+	public List<Classification> viewAllClassification() {
+		List<Classification> classificationList = new ArrayList<Classification>();
+		classificationList=hibernateTemplate.loadAll(Classification.class);
+		return classificationList;
+	}
+
+//	@Override
+//	public void deleteClassificationById(Integer classification_id) {
+//		// TODO Auto-generated method stub
+//		
+//	}
 
 }
